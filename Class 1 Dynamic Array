@@ -1,0 +1,43 @@
+/***********************************
+ ------------------------------------
+Sarah Bass
+Dynamic Arrays Assignment
+CS 41 Data Structures
+Description:Create an array of numbers 
+based upon user input.
+-------------------------------------
+*************************************/
+#include <stdio.h> 
+#include <iostream> 
+#include <string>  
+#include <fstream> 
+#include <iomanip> 
+#include <cmath> 
+
+using namespace std;
+int main() {
+
+	int x, n;
+	cout << "Enter the Array Length:" << "\n";
+	cin >>n;
+	int *arr = new int(n);
+	cout << "Enter " << n << " items to the array or type -1 to stop . " << endl;
+	
+		for (x = 0; x < n; x++) {
+		cin >> arr[x];
+		if (arr[x] == -1){
+		arr[x] = 0;
+		x = n;
+		}    
+		}
+	    
+	
+	cout << "Array : [";
+for (int i = 0; i < n; i++){
+    cout <<  " " << arr[i] << ","; }
+
+cout <<  " ] " << endl;
+
+
+return 0;
+}
