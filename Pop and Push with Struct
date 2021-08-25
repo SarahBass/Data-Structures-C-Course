@@ -1,0 +1,94 @@
+/************************************************************
+ ------------------------------------------------------------
+Sarah Bass
+Array Based Stack Assignment
+CS 41 Data Structures
+Description: Create a class/struct that uses push and pop.
+-------------------------------------------------------------
+Operations in <stack>:
+push – It adds/pushes an item into the stack.
+pop – It removes/pops an item from the stack.
+peek – Returns the top item of the stack w/o removing it.
+isFull – Checks whether a stack is full.
+isEmpty – Checks whether a stack is empty.
+-------------------------------------------------------------
+************************************************************/
+#include <stdio.h> 
+#include <iostream> 
+#include <string>  
+#include <fstream> 
+#include <iomanip> 
+#include <cmath> 
+#include <stack>
+#include <cstdlib>
+
+using namespace std;
+
+
+void createStack(stack <int> mystack){
+	stack <int> ms = mystack;
+	while (!ms.empty())
+	{
+		cout << '\t' << ms.top();
+		ms.pop();
+	}
+	cout << '\n';
+}
+
+
+int main()
+{
+    int array[10];
+    int MaxSize = 10;
+    int i = 10;
+    int j = 10;
+	stack <int> st;
+/*               _     
+ _ __  _   _ ___| |__  
+| '_ \| | | / __| '_ \ 
+| |_) | |_| \__ \ | | |
+| .__/ \__,_|___/_| |_|
+|_|                    */
+
+
+cout << "---------------PUSH---------------" << endl;
+
+    for (int x = 0; x < 15; x++){
+        if (st.size() >= 10) {
+        cout << "Error: Enter 10 items only. Stack is FULL" << endl;}
+        else {
+            st.push(i);
+            i = i + j;
+            cout << "The stack is: ";
+	        createStack(st);
+    }  
+    }
+
+	cout << "\n Stack size() : " << st.size() << endl;
+	cout << "\n Stack top() : " << st.top() << endl;
+    cout << "\n" <<endl;
+    cout << "---------------POP---------------" << endl;
+    
+
+/* _    ___  _ __  
+| '_ \ / _ \| '_ \ 
+| |_) | (_) | |_) |
+| .__/ \___/| .__/ 
+|_|         |_|    */
+
+   for (int x = 0; x < 15; x++){
+        if (st.size() <= 0) {
+        cout << "Error: Enter 10 items only. Stack is Empty" << endl;}
+        else {
+            st.pop();
+            cout << "The stack is: ";
+	        createStack(st);
+    }  
+    }
+ 
+    cout << "\n Stack size() : " << st.size() << endl;
+	cout << "\n Stack top() : " << st.top() << endl;
+    cout << "\n" <<endl;
+
+	return 0;
+}
